@@ -37,6 +37,10 @@ function askQuestion(question = "hi, how are you?") {
 	return generateResponse();
 }
 
+/**
+ * [generateResponse description]
+ * @return {[type]} [description]
+ */
 function generateResponse() {
 	var previousWordIndex = 0;
 
