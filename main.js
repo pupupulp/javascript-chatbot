@@ -56,7 +56,7 @@ function generateResponse() {
 					response.bestSequence = response.currentSequence;
 					response.phrase = dictionary.conversations[question];
 					break;
-				case questionWords.includes(userWord):
+				case !questionWords.includes(userWord):
 					response.currentSequence -= 2;
 					break;
 				case questionWords.indexOf(userWord) < previousWordIndex:
