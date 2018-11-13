@@ -20,22 +20,10 @@ var	responseObj = {
  * @type {Object}
  */
 var dictionary = {
-	raw: {
+	conversations: {
 		"hi, how are you?": "im fine",
 		"where are you?": "im here",
 	},
-	processed: [],
-	prepare: function() {
-		var raw = this.raw,
-			processed = this.processed;
-
-		Object.keys(raw).map(function(key) {
-			var splittedKey = key.split(" "),
-				value = raw[key];
-
-			processed[splittedKey] = value;
-		});
-	}
 };
 
 /**
@@ -49,9 +37,10 @@ function askQuestion(question = "hi, how are you?") {
 }
 
 function generateResponse() {
-	dictionary.prepare()
-	// console.log(questionObj.words);
-	// console.log(dictionary);
+	for(question in dictionary.conversations) {
+		var questionWords = question.split(" ");
+		console.log(questionWords);
+	};
 }
 
 askQuestion();
